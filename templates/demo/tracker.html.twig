@@ -1,0 +1,42 @@
+{% extends "demo/base.html.twig" %}
+
+{% block head %}
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KXMFRVB');</script>
+    <!-- End Google Tag Manager -->
+
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KXMFRVB"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    {{ parent() }}
+{% endblock %}
+
+
+{% block content %}
+    <h1 class="text-2xl">Demo-Site mit externen Tools</h1>
+
+    <nav>
+        <ol class="list-decimal list-inside ml-0 pl-4">
+            <li><a href="#cdnstyle">Stylesheet von CDN</a></li>
+            <li><a href="#remoteimg">Logo direkt von Google geladen mittels</a></li>
+        </ol>
+    </nav>
+    
+    <h2 id="cdnstyle" class="text-xl mb-4">Stylesheet von CDN</h2>
+
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+    <h2 id="remoteimg" class="text-xl mb-4">Logo direkt von Google geladen mittels:</h2>
+
+    <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="" />
+{% endblock %}
